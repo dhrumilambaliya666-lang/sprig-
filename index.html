@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sprig – an AI design thinking studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="logo">Sprig</div><button class="ghost sm" id="reset">Start over</button></header>
+
+<section class="hero">
+<div>
+<h1>Solve the right problem, then solve it right.</h1>
+<p>Sprig walks you through the five stages of design thinking and gives you an AI coach at each one. Type the challenge you're facing and begin.</p>
+<form class="ask" id="start">
+<input id="challenge" aria-label="Your challenge" placeholder="e.g. new students feel lost in their first week" maxlength="120">
+<button type="submit">Begin empathizing</button>
+</form>
+</div>
+<div class="wall" aria-hidden="true">
+<div class="n" style="--r:-5deg;left:0;top:10px;background:var(--y)">Talk to real people first<small>Empathize</small></div>
+<div class="n" style="--r:4deg;left:150px;top:0;background:var(--p);animation-delay:.12s">Name the need, not the fix<small>Define</small></div>
+<div class="n" style="--r:-3deg;left:40px;top:135px;background:var(--m);animation-delay:.24s">Go wide, then pick<small>Ideate</small></div>
+<div class="n" style="--r:6deg;left:200px;top:125px;background:var(--s);animation-delay:.36s">Build the cheapest version<small>Prototype</small></div>
+<div class="n" style="--r:-4deg;left:105px;top:235px;background:var(--y);animation-delay:.48s">Watch, listen, repeat<small>Test</small></div>
+</div>
+</section>
+
+<section class="journey" id="journey" aria-label="Design thinking journey">
+<div class="steps" role="tablist" id="steps"></div>
+
+<div class="panel" id="p0">
+<h2>Empathize</h2>
+<p class="lead">Understand the person before the problem. Capture what you hear and see from real users on the map below.</p>
+<div class="split">
+<div class="quad" id="quad"></div>
+<aside class="coach"><h3>AI coach</h3><ul id="c0"></ul><div class="why">Suggestions are generated on your device from your challenge and notes.</div></aside>
+</div>
+</div>
+
+<div class="panel" id="p1">
+<h2>Define</h2>
+<p class="lead">Turn your notes into one sharp problem statement. Fill the three blanks.</p>
+<div class="split">
+<div>
+<label for="pu">Who is the user?</label><input id="pu" placeholder="a first-year student">
+<label for="pn">What do they need?</label><input id="pn" placeholder="to feel they belong on campus">
+<label for="pi">Why? What surprising insight did you find?</label><input id="pi" placeholder="they only meet people in their own course">
+<div class="out empty" id="pov">Your problem statement appears here.</div>
+<ul class="alts" id="alts"></ul>
+</div>
+<aside class="coach"><h3>AI coach</h3><ul id="c1"></ul><div class="why">Good statements name a need, not a solution.</div></aside>
+</div>
+</div>
+
+<div class="panel" id="p2">
+<h2>Ideate</h2>
+<p class="lead">Quantity first. Add every idea, then vote to find where the energy is.</p>
+<div class="split">
+<div>
+<form class="row" id="ideaForm"><input id="ideaIn" aria-label="New idea" placeholder="Add an idea" maxlength="100"><button>Add idea</button></form>
+<div id="ideas"></div>
+</div>
+<aside class="coach"><h3>AI coach</h3><ul id="c2"></ul><button class="ghost sm" id="twist">New twist</button></aside>
+</div>
+</div>
+
+<div class="panel" id="p3">
+<h2>Prototype</h2>
+<p class="lead">Make the smallest thing that can teach you something. Pick a fidelity, then decide what you're testing.</p>
+<div class="split">
+<div>
+<label>Fidelity</label>
+<div class="chips" id="fid"></div>
+<label for="scope">What is the smallest testable version of your top idea?</label>
+<textarea id="scope" rows="3" placeholder="A one-page sign-up sheet for a buddy program"></textarea>
+<label for="asm">Add an assumption you need to check</label>
+<form class="row" id="asmForm"><input id="asm" placeholder="Students will reply to a text within a day"><button>Add</button></form>
+<div id="asms"></div>
+</div>
+<aside class="coach"><h3>AI coach</h3><ul id="c3"></ul><div class="why">A prototype is a question you can hold in your hand.</div></aside>
+</div>
+</div>
+
+<div class="panel" id="p4">
+<h2>Test</h2>
+<p class="lead">Show your prototype to five people. Log each reaction and see what it says about your next step.</p>
+<div class="split">
+<div>
+<form id="testForm">
+<label for="tt">What did the person say or do?</label>
+<input id="tt" placeholder="Tried to tap the photo, expected it to open">
+<div class="chips" id="tags" role="group" aria-label="Reaction type"></div>
+<button>Log feedback</button>
+</form>
+<div class="bars" id="bars"></div>
+<div class="out empty" id="verdict">Log at least one reaction to see a recommendation.</div>
+</div>
+<aside class="coach"><h3>AI coach</h3><ul id="c4"></ul><div class="why">Loop back as often as needed. Iteration is the method.</div></aside>
+</div>
+</div>
+
+<div class="nav"><button class="ghost" id="prev">Back</button><button id="next">Next stage</button></div>
+</section>
+<div class="foot">Your work stays in this page and is cleared when you close it.</div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
